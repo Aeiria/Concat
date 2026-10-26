@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original BlushCut launcher mark for Aeiria's personal Concat fork. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Strawberry milk rounded square. -->
+    <path android:fillColor="#F8C8DC"
+        android:pathData="M24,4 H84 C95,4 104,13 104,24 V84 C104,95 95,104 84,104 H24 C13,104 4,95 4,84 V24 C4,13 13,4 24,4 Z" />
+    <!-- Charcoal film frame. -->
+    <path android:fillColor="#261A23"
+        android:pathData="M27,26 H81 C86,26 89,29 89,34 V74 C89,79 86,82 81,82 H27 C22,82 19,79 19,74 V34 C19,29 22,26 27,26 Z" />
+    <!-- Pale pink editing canvas. -->
+    <path android:fillColor="#FFF3F8"
+        android:pathData="M34,34 H74 V74 H34 Z" />
+    <!-- Cinematic holes on the frame edges. -->
+    <path android:fillColor="#F8C8DC"
+        android:pathData="M23,37 H29 V46 H23 Z M23,54 H29 V63 H23 Z M79,37 H85 V46 H79 Z M79,54 H85 V63 H79 Z" />
+    <!-- Raspberry play button. -->
+    <path android:fillColor="#A52F65"
+        android:pathData="M46,42 L46,66 L67,54 Z" />
+</vector>
