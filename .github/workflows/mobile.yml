@@ -239,7 +239,7 @@ jobs:
           fi
           sdk=${ANDROID_HOME:-$ANDROID_SDK_ROOT}
           tools=$(find "$sdk/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -1)
-          apk=src/target/release/apk/Concat.apk
+          apk=src/target/release/apk/BlushCut.apk
           "$tools/apksigner" sign --ks "$keystore" --ks-pass env:KEYSTORE_PASSWORD \
             --ks-key-alias "$alias" --key-pass env:KEY_PASSWORD "$apk" < /dev/null
           rm -f "$keystore"
@@ -249,7 +249,7 @@ jobs:
       # and the build would not say so.
       - name: Every library is aligned for 16 KB pages
         if: matrix.ship
-        run: python3 scripts/ci/check-16k-pages.py src/target/release/apk/Concat.apk
+        run: python3 scripts/ci/check-16k-pages.py src/target/release/apk/BlushCut.apk
 
       - name: Build log to the summary (failure only)
         if: failure()
@@ -270,14 +270,14 @@ jobs:
         run: |
           set -euo pipefail
           mkdir stage
-          cp src/target/release/apk/Concat.apk "stage/Concat-$VERSION-android-${{ matrix.abi }}.apk"
+          cp src/target/release/apk/BlushCut.apk "stage/BlushCut-$VERSION-android-${{ matrix.abi }}.apk"
           ls -l stage
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           # Concat-* is what a release publishes; the emulator's APK is
           # named so it never is.
-          name: ${{ matrix.ship && 'Concat-android-arm64' || 'smoke-apk-android-x86_64' }}
+          name: ${{ matrix.ship && 'BlushCut-android-arm64' || 'smoke-apk-android-x86_64' }}
           path: stage/*
           if-no-files-found: error
 
@@ -336,7 +336,7 @@ jobs:
           emulator-boot-timeout: 900
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -no-boot-anim -camera-back none -camera-front none
           disable-animations: true
-          script: scripts/ci/smoke-android.sh --out smoke-android --wait 60 apk/Concat-*.apk
+          script: scripts/ci/smoke-android.sh --out smoke-android --wait 60 --package app.aeiria.blushcut apk/BlushCut-*.apk
 
       # The log, the screenshot and the rest, pass or fail.
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

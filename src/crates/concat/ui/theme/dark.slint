@@ -79,12 +79,12 @@ export global Dark {
     // separating a pane from the ground; without one the value step has to do
     // all of it, and a darker ladder leaves the panes reading as holes in the
     // window rather than as surfaces on it.
-    out property <color> panel: #212123;
-    out property <color> raised: #2b2b2e;
-    out property <color> well: #19191b;
-    out property <color> field: #323235;
-    out property <color> field-hover: #3b3b3e;
-    out property <color> field-active: #46464a;
+    out property <color> panel: #30252e;
+    out property <color> raised: #3c2e38;
+    out property <color> well: #241a22;
+    out property <color> field: #493640;
+    out property <color> field-hover: #573f4c;
+    out property <color> field-active: #654957;
 
     // the launch screen's own ladder — a deeper cut of the one above
     //
@@ -100,21 +100,21 @@ export global Dark {
     // reads: `launch-well` is sunken under the card, `launch-raised` is the
     // lift a hover gives, `launch-field` is a chip that is the answer. Only
     // the whole ladder has moved down.
-    out property <color> launch-page: #0e0e10;
-    out property <color> launch-panel: #161619;
-    out property <color> launch-well: #101013;
-    out property <color> launch-raised: #1e1e22;
-    out property <color> launch-field: #26262b;
-    out property <color> launch-field-active: #313138;
+    out property <color> launch-page: #191317;
+    out property <color> launch-panel: #271c24;
+    out property <color> launch-well: #1e171d;
+    out property <color> launch-raised: #352732;
+    out property <color> launch-field: #44313d;
+    out property <color> launch-field-active: #513947;
 
     // hairlines — white-alpha, so they hold on panel, well, and ground alike.
     out property <color> line: #ffffff1a;         // rgb(255 255 255 / 0.1)
     out property <color> line-strong: #ffffff33;  // rgb(255 255 255 / 0.2)
 
     // text
-    out property <color> fg: #f5f5f7;
-    out property <color> fg-muted: #a1a1a6;
-    out property <color> fg-dim: #6e6e73;
+    out property <color> fg: #fff0f7;
+    out property <color> fg-muted: #d9b3c4;
+    out property <color> fg-dim: #a48694;
     // One step past `fg`, away from the ground: pure white here, pure black
     // on the light palette. For the one button whose fill *is* the ink —
     // the launch screen's Create — where hover has to mean more contrast
@@ -219,14 +219,14 @@ export global Dark {
     // still reads as a well cut into the pane, and a clip's own dark ground
     // now sits *on* something rather than floating in a hole. Both stay well
     // under `panel`, or the empty stretches would read as content.
-    out property <color> lane: #1a1a1c;
-    out property <color> lane-alt: #1e1e20;
+    out property <color> lane: #241b22;
+    out property <color> lane-alt: #20181f;
     // The ruler is its own surface, not the first row of the stack: a step
     // under the darker lane, so the strip carrying the timestamps reads as
     // the floor of the pane and the banding starts below it. It followed
     // `raised` before, which put it above the panel and made it the brightest
     // thing in the pane — the opposite of what a ruler should be.
-    out property <color> ruler: #171719;
+    out property <color> ruler: #30242c;
     /// The vertical rules. 6% white was set against a lane that was still a
     /// dark grey, and all but vanished when the lanes went black — a grid that
     /// costs elements and reads as nothing. 14% clears both of the tones the
@@ -308,6 +308,6 @@ export global Dark {
 
     // window ground the panes float on — a shade under the darkest panel so
     // the gutters read as gaps and not as seams
-    out property <color> page: #151517;
+    out property <color> page: #1c151b;
     out property <color> page-fg-muted: #a1a1a6;
 }

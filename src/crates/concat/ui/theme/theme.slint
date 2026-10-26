@@ -46,7 +46,7 @@ export global Theme {
     /// picks it (main.rs, `on_settings_theme_changed`), and every binding in
     /// the tree is a property read away from it, so the window retones in a
     /// frame without anything being rebuilt.
-    in-out property <bool> dark: true;
+    in-out property <bool> dark: false;
     /// Which of the palettes' accents the accent tokens are read from: an
     /// index into `accent-names`, and into each palette's `accents`.
     /// Settings > Appearance picks it (lib.rs, `on_settings_accent_changed`)
@@ -54,7 +54,7 @@ export global Theme {
     /// Remembered by name rather than by number, so a list that grows or
     /// reorders keeps everyone's choice; 0 is Lime, the default. One past
     /// the last name is the custom colour, `accent-custom`.
-    in-out property <int> accent-choice: 0;
+    in-out property <int> accent-choice: 3;
     /// A colour picked by hand in place of any on the list. Read only while
     /// `accent-choice` points past the list, and one colour under both
     /// palettes: whoever picked it picked what they see, and the three
